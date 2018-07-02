@@ -30,7 +30,7 @@ class PageController extends Controller
             $parent = Page::find($id);
             $compiled['data']['children'] = $parent->sortChildren()->get(['id', 'name', 'title']);
         }
-        $compiled['msg'] = 'Ветвь загружена';
+        $compiled['msg'] = __('admin-panel.branch_loaded');
         return response()->json($compiled, 200);
     }
 
@@ -42,6 +42,7 @@ class PageController extends Controller
         $compiled['data'] = ['id' => 'root', 'name' => 'root', 'locked_content' => 1, 'locked_move' => 1, 'active' => 0, 'has_children' => 1];
         $tree = $this->subTree();
         $compiled['data']['children'] = $tree;
+        $compiled['msg'] = __('admin-panel.tree_loaded');
         return response()->json($compiled, 200);
     }
 
@@ -76,7 +77,7 @@ class PageController extends Controller
         $page = Page::findOrFail($pageId);
         $page->oldUris()->delete();
         $page->delete();
-        return response(['msg' => 'Страница удалена']);
+        return response(['msg' => __('admin-panel.page_deleted')]);
     }
 
     public function treeMove(Request $request)
@@ -122,20 +123,20 @@ class PageController extends Controller
                 $movedNode->afterNode($neighbor)->save();
             }
         }
-        return response(['msg' => 'Страница перемещена']);
+        return response(['msg' => __('admin-panel.page_moved')]);
     }
 
     public function page(Request $request)
     {
         $id = request('id');
         $page = Page::findOrFail($id, ['name', 'title', 'content', 'slug', 'active', 'locked_content', 'locked_move', 'template']);
-        if ($page) return response(['msg' => 'Страница загружена', 'page' => $page]);
+        if ($page) return response(['msg' => __('admin-panel.page_loaded'), 'page' => $page]);
     }
 
     public function createPage(Request $request)
     {
         // name: '', title: '', content: '', slug: ''
-        $validatedData = $request->validate([
+        $request->validate([
             'name' => 'required|max:20',
             'title' => 'required|max:255',
             'content' => 'required',
@@ -153,7 +154,7 @@ class PageController extends Controller
             $newPage = $parent->children()->create($newPageData);
         }
         PageOldUri::where('uri', '=', $newPage->uri)->delete();
-        return response()->json(['msg' => 'Страница сохранена', 'id' => $newPage->id], 200);
+        return response()->json(['msg' => __('admin-panel.page_saved'), 'id' => $newPage->id], 200);
 
     }
 
@@ -175,7 +176,7 @@ class PageController extends Controller
             unset($pageData['content']);
         }
         if ($page->update($pageData)) {
-            return response()->json(['msg' => 'Страница сохранена'], 200);
+            return response()->json(['msg' => __('admin-panel.page_saved')], 200);
         }
 //        $newPage = Page::create($newPageData);
 //        $newPage->appendToNode($parent)->save();

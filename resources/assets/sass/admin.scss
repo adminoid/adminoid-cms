@@ -15,12 +15,26 @@
 
 /* Sticky footer styles
 -------------------------------------------------- */
+html, body {
+  height: 100%;
+}
+.container-fluid {
+  margin: 0 auto;
+  height: 100%;
+  padding: 20px 0;
+
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  #content-wrapper {
+    height: 100%;
+  }
+}
 html {
   position: relative;
-  min-height: 100%;
+  //min-height: 100%;
 }
 body {
-  margin-bottom: 150px; /* Margin bottom by footer height */
   #main-menu {
     background-color: #e3f2fd;
     border-bottom: 1px solid #aed5fd;
@@ -41,7 +55,7 @@ body {
       top: 73px;
       right: 18px;
       width: 400px;
-      z-index: 1;
+      z-index: 1200;
       @media (max-width: 575.98px) {
         width: 90%;
         left: 5%;

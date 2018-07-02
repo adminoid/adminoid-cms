@@ -21,4 +21,11 @@ return [
     'confirm_move' => 'Confirm move page',
     'really_move' => 'Are you sure you want to move the page?',
 
+    'branch_loaded' => 'Branch loaded',
+    'tree_loaded' => 'Tree loaded',
+    'page_deleted' => 'Page deleted', // __('admin-panel.page_deleted')
+    'page_moved' => 'Page moved',
+    'page_loaded' => 'Page loaded',
+    'page_saved' => 'Page saved',
+
 ];

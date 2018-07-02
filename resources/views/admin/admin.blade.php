@@ -18,10 +18,11 @@
 <body>
 
 <!-- Begin page content -->
-<main role="main" class="container" id="app">
+<main role="main" class="container container-fluid" id="app">
     <div class="row">
         <nav id="main-menu" class="navbar fixed-top navbar-expand-lg navbar-light col-sm-12">
             <div class="container">
+                <a class="navbar-brand order-md-last" href="#/">Adminoid CMS</a>
                 <button class="navbar-toggler" type="button" @click="toggleSidebar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -29,7 +30,7 @@
         </nav>
     </div>
 
-    <div class="row">
+    <div class="row" id="content-wrapper">
         <div class="col-sm-12">
             <transition-group name="list-complete" tag="div" id="alerts-wrapper">
                 <alert-item v-for="(alert, index) in alerts" :data="alert" :key="alert.id" :data-index="index" @close="removeAlert" class="list-complete-item"></alert-item>
