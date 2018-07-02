@@ -6,17 +6,24 @@
 
     <div class="row">
         <loading :active.sync="isLoading"></loading>
-        <div class="col-sm-4">
-            <sortable-tree-ajax :data="treeData" attr="name" id="id">
-                <template slot-scope="{item}">
-                    <span>@{{item.name}}</span>
-                </template>
-            </sortable-tree-ajax>
-            <div id="modal-place">
-                <div id="modals"></div>
+
+        <transition
+                @enter="sbEnter"
+                @leave="sbLeave"
+                :css="false"
+        >
+            <div class="col-lg-5 col-md-7" id="sidebar" v-show="sidebar">
+
+                <sortable-tree-ajax :data="treeData" attr="name" id="id">
+                    <template slot-scope="{item}">
+                        <span>@{{item.name}}</span>
+                    </template>
+                </sortable-tree-ajax>
+
             </div>
-        </div>
-        <div class="col-sm-8">
+        </transition>
+
+        <div :class="sbClasses">
             <router-view></router-view>
         </div>
     </div>

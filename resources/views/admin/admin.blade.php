@@ -18,31 +18,25 @@
 <body>
 
 <!-- Begin page content -->
-<main role="main" class="container">
+<main role="main" class="container" id="app">
     <div class="row">
-
         <nav id="main-menu" class="navbar fixed-top navbar-expand-lg navbar-light col-sm-12">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" @click="toggleSidebar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="/admin-panel">Admin panel<span class="sr-only">(current)</span></a>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </nav>
     </div>
-    <div class="row">
-        <div class="col-sm-12" id="app">
 
+    <div class="row">
+        <div class="col-sm-12">
             <transition-group name="list-complete" tag="div" id="alerts-wrapper">
                 <alert-item v-for="(alert, index) in alerts" :data="alert" :key="alert.id" :data-index="index" @close="removeAlert" class="list-complete-item"></alert-item>
             </transition-group>
-
+            <div id="modal-place">
+                <div id="modals"></div>
+            </div>
             @yield('content')
         </div>
     </div>

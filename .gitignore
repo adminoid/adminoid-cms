@@ -14,5 +14,4 @@ yarn-error.log
 /noindex
 tags
 /database/seeds/UsersTableSeeder.php
-/database/seeds/PagesTableSeeder.php
 .DS_Store

@@ -104,14 +104,33 @@ new Vue({
     data() {
         return {
             isLoading: false,
-            alerts: []
+            alerts: [],
+            sidebar: true
         }
     },
+
     components: {
         [SortableTreeAjax.name]: SortableTreeAjax,
         Loading, AlertItem
     },
+
     methods: {
+        sbEnter (el, done) {
+            $(el).hide().slideDown(100, () => {
+                done()
+            })
+        },
+
+        sbLeave (el, done) {
+            $(el).slideUp(100, () => {
+                done()
+            })
+        },
+
+        toggleSidebar () {
+            this.sidebar = !this.sidebar
+        },
+
         pushAlert (data) {
             let maxAlert = _.maxBy(this.alerts, function(alert) {
                 return alert.id
@@ -120,6 +139,7 @@ new Vue({
             data.id = maxId + 1
             this.alerts.push(data)
         },
+
         removeAlert (idx) {
             this.alerts.splice(idx, 1)
         }
@@ -151,6 +171,9 @@ new Vue({
         this.$store.dispatch('synchronizeTree', opened)
     },
     computed: {
+        sbClasses () {
+            return (this.sidebar) ? 'col-lg-7 offset-lg-5 col-md-5 offset-md-7' : 'col-sm-12'
+        },
         treeData () {
             return this.$store.state.treeData
         }
