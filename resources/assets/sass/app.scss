@@ -1,6 +1,7 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+//@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@import url("https://fonts.googleapis.com/css?family=PT+Serif");
 
 // Variables
 @import "variables";
@@ -8,7 +9,75 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+//.navbar-laravel {
+//  background-color: #fff;
+//  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+//}
+
+$border-color: #c9dffb;
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
 }
+body {
+  margin-bottom: 150px; /* Margin bottom by footer height */
+  #main-menu {
+    background-color: #e3f2fd;
+    border-bottom: 1px solid $border-color;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+  }
+  //.main-content {
+  //  padding-bottom: 30px;
+  //}
+  main.container {
+    padding-bottom: 60px;
+  }
+  h1,h2,h3,h4,h5,h6,
+  .h1,.h2,.h3,.h4,.h5,.h6 {
+    font-family: 'PT Serif', serif;
+  }
+}
+.only-mobile {
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding-top: 30px;
+  height: 150px; /* Set the fixed height of the footer here */
+  background-color: #e3f2fd;
+  border-top: 1px solid $border-color;
+}
+
+img.float-left {
+  margin-right: 16px;
+}
+
+#header-pane {
+  margin-top: 57px+30px;
+  margin-bottom: 30px;
+}
+
+//#logo-top {
+//  margin-bottom: 30px;
+//}
+
+#navbarNavDropdown > ul > li > div > button,
+#navbarNavDropdown > ul > li> div > div {
+  //border-color: rgba(0, 0, 0, 0.5);
+  border-color: #aed5fd;
+  color: rgba(0, 0, 0, 0.5);
+  background-color: #e3f2fd;
+}
+
+#home-carousel {
+  max-width: 700px !important;
+}
+

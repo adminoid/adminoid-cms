@@ -1,2 +1,20 @@
+User-agent: Yandex
+Crawl-delay: 2
+Disallow: /login/
+Disallow: /register/
+
+User-agent: Googlebot
+Disallow: /login/
+Disallow: /register/
+
+User-agent: Slurp
+Crawl-delay: 8
+Disallow: /login/
+Disallow: /register/
+
 User-agent: *
-Disallow:
+Crawl-delay: 10
+Disallow: /login/
+Disallow: /register/
+
+Sitemap: https://sodplus.ru/sitemap.xml
