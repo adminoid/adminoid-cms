@@ -16,8 +16,17 @@ class PagesTableSeeder extends Seeder
             'name' => 'Main page',
             'title' => 'Adminoid CMS',
             'content' => "
-                <p>SEO friendly content management system based on Laravel and Vue js.</p>
-                <p>That universal CMS also based on Tree data management and drag&drop TreeView.</p>
+                <p>Built with Laravel and Vue.js frameworks.</p>
+                <p>Universal SEO friendly content management system based on extendable tree data management and drag&drop TreeView.</p>
+                <p>Futures:</p>
+                <ul>
+                    <li>Uris automatic generated with nested pages
+</li>
+                    <li>If pages moves, system remember all old uri and make automatic 301 redirect all their to new location</li>
+                    <li>Pages is one eloquent object, but it available for extend</li>
+                    <li>Page content is being edited with summernote wysiwyg editor</li>
+                    <li>Images uploading to folder in public like uri of his page</li>
+                </ul>
             ",
             'slug' => '/',
             'template' => 'pages.simple',
