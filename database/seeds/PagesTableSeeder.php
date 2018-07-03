@@ -43,6 +43,12 @@ moving.
     owns the picture</li>
     <li>The default template is implementing using the twitter bootstrap framework</li>
 </ul>
+<p>
+<strong>Demo:</strong> <a href='https://cms.adminoid.com/admin-panel/'>https://cms.adminoid.com/admin-panel/</a><br>
+<strong>Login:</strong> admin@adminoid.com<br>
+<strong>Password:</strong> password
+</p>
+<p><strong>Repo:</strong> <a href='https://github.com/adminoid/adminoid-cms'>https://github.com/adminoid/adminoid-cms</a></p>
             ",
             'slug' => '/',
             'template' => 'pages.simple',
