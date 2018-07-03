@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>@yield('title')</title>
+    <title>@yield('title') 📄</title>
 
     <link rel="icon" href="/favicon.ico">
 

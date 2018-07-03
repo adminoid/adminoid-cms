@@ -16,17 +16,33 @@ class PagesTableSeeder extends Seeder
             'name' => 'Main page',
             'title' => 'Adminoid CMS',
             'content' => "
-                <p>Built with Laravel and Vue.js frameworks.</p>
-                <p>Universal SEO friendly content management system based on extendable tree data management and drag&drop TreeView.</p>
-                <p>Futures:</p>
-                <ul>
-                    <li>Uris automatic generated with nested pages
-</li>
-                    <li>If pages moves, system remember all old uri and make automatic 301 redirect all their to new location</li>
-                    <li>Pages is one eloquent object, but it available for extend</li>
-                    <li>Page content is being edited with summernote wysiwyg editor</li>
-                    <li>Images uploading to folder in public like uri of his page</li>
-                </ul>
+<h2>About Adminoid CMS</h2>
+<p>When creating the Adminoid CMS, I was inspired by the <a href='https://modx.com/'>modx cms</a>, with which I used to have worked. Made with <a href='https://laravel.com/'>Laravel</a> and <a href='https://vuejs.org/'>Vue.js</a>.</p>
+
+<p>
+This is a simple but extensible SEO-friendly content management system,
+based on tree-like data representation and management through
+TreeView, in which you can simply drag the page nodes for them
+moving.
+</p>
+
+
+<h2>Features</h2>
+
+<ul>
+    <li>Uri (page addresses) are automatically generated when you change or
+    moving</li>
+    <li>If the page moves, the system remembers all past uri and
+    automatically redirects through 301 redirects to the current address</li>
+    <li>Automatic generation of sitemap.xml</li>
+    <li>All pages are one eloquent object, but they can be extended, added
+    new page types with additional properties and methods</li>
+    <li>The contents of the page are edited by default with wysiwyg
+    summernote editor compatible with twitter bootstrap. Uploading images to
+    editor occurs in a folder with the same name as the uri of the page to which
+    owns the picture</li>
+    <li>The default template is implementing using the twitter bootstrap framework</li>
+</ul>
             ",
             'slug' => '/',
             'template' => 'pages.simple',
