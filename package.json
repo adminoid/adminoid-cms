@@ -21,7 +21,7 @@
     },
     "dependencies": {
         "ajv": "^6.5.1",
-        "codemirror": "^5.38.0",
+        "codemirror": "^5.58.2",
         "node-sass": "^4.9.0",
         "npm": "^6.1.0",
         "summernote": "^0.8.10",
